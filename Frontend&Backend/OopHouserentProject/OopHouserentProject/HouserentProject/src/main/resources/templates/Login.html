@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('bc1.png') center/cover no-repeat fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(241, 234, 234, 0.3); /* Adjust the last value for opacity */
+            z-index: -1;
+        }
+        
+        #loginContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            background-color: #f1efef;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #353131; /* User pink color */
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #413a3a; /* Light gray text color */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #0e0d0d; /* Medium gray border */
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0a2e91;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #18043f;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3f3838;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #choiceContainer {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        #choiceContainer button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #8f4545;
+            color: #fff;
+        }
+
+        #choiceContainer button:hover {
+            background-color: #2b2a2a;
+        }
+      
+    </style>
+</head>
+    <body>
+        <form action="/Login" method="POST" enctype="application/json">
+            <h2>Login</h2>
+            <label for="ID">ID:</label>
+            <input type="tel" name="ID" required>
+    
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+    
+            <button type="submit">Login</button>
+            <div class="forgot-password">
+                <a href="forgetthepassword">Forgot Password?</a>
+            </div>
+        </form>
+    </body>
+</html>

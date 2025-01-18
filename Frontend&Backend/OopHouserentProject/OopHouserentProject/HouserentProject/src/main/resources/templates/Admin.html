@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('bc2.png') center/cover no-repeat fixed;
+            background-color: #f5f5f8;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+     
+
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            width: 100%;
+            background-color: #2a1281;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background-color: #111010;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(199, 147, 147, 0.1);
+            margin: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #3129a1;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 88px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button1 {
+            background-color: #3129a1;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 88px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button2 {
+            background-color: #3129a1;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 88px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button3 {
+            background-color: #3129a1;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 88px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button4 {
+            background-color:  #3129a1;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 88px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button5 {
+            background-color: #8f5c19;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 88px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color:  #110c5c;
+        }
+        
+        button1:hover {
+            background-color: #110c5c;
+        }
+        button2:hover {
+            background-color: #110c5c;
+        }
+        
+        button3:hover {
+            background-color: #110c5c;
+        }
+        button4:hover {
+            background-color: #110c5c;
+        }
+        
+        button5:hover {
+            background-color: #110c5c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Admin Page</h1>
+    
+    <div class="section" style="background-color: #fffdfd;">
+        <img src="add cus2.png" alt="Your Image">
+        <button onclick="window.location.href='/addCustomer'">Add Customer</button>
+    </div>
+    <div class="section" style="background-color: #faf6f7;">
+        <img src="remove cus2.png" alt="Your Image">
+        <button1 onclick="window.location.href='/removeCustomer'">Remove Customer</button1>
+    </div>
+    <div class="section" style="background-color: #faf7f7;">
+        <img src="add broker2.png" alt="Your Image">
+        <button onclick="window.location.href='/addBroker'">Add Broker</button>
+    </div>
+    <div class="section" style="background-color: #faf8f8;">
+        <img src="remove broker.png" alt="Your Image">
+        <button onclick="window.location.href='/removeBroker'">Remove Broker</button>
+    </div>
+    <div class="section" style="background-color: #ffffff;">
+        <img src="role.png" alt="Your Image">
+        <button onclick="window.location.href='/SearchFor'">Search By Role</button>
+    </div>
+    <div class="section" style="background-color: #f8f6f6;">
+        <img src="auth.png" alt="Your Image">
+        <button onclick="window.location.href='/Authorize'">Authorize</button>
+    </div>
+    <div class="section" style="background-color: #f8f4f5;">
+        <img src="view request.png" alt="Your Image">
+        <button onclick="window.location.href='/ViewRequest'">View Request</button>
+    </div>
+</body>
+</html>

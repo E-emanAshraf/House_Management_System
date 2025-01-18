@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Done Deals</title>
+    <style>
+        body {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background: url('bc2.png') center/cover no-repeat fixed;
+         margin: 0;
+         padding: 0;
+         background-color: #f8f8f8;
+     }
+
+     header {
+         background-color: #1c0a4d;
+         color: #fff;
+         text-align: center;
+         padding: 1em;
+     }
+
+     section {
+         max-width: 600px;
+         margin: 20px auto;
+         padding: 30px;
+         background-color: #fff;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+         border-radius: 10px;
+     }
+
+     label {
+         display: block;
+         margin-bottom: 10px;
+         font-weight: bold;
+     }
+
+     footer {
+         padding: 10px;
+         background-color: #141414;
+         color: #0c0c0c;
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+     }
+
+     form {
+         margin-top: 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+
+
+     input,
+     select {
+         margin-bottom: 15px;
+         padding: 8px;
+         border: 1px solid #080808;
+         border-radius: 5px;
+         background-color: #f8f3f3;
+         color: #080808;
+         width: 100%;
+         box-sizing: border-box;
+     }
+
+     button {
+         padding: 12px;
+         background-color: #2c167c;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         width: 100%;
+         font-size: 18px;
+     }
+
+     button:hover {
+         background-color: #0b0b3d;
+     }
+
+ </style>
+</head>
+
+<body>
+    <header>
+        <h1>Done Deals</h1>
+    </header>
+
+    <section id="dealsSection">
+        <h2>Enter Your Requirements</h2>
+        <ul id="dealsList">
+            <!-- Existing houses will be added here dynamically -->
+        </ul>
+        <form id="addDealForm">
+            <label for="brokerLSBN">BrokerLSBN:</label>
+            <input type="text" id="brokerLSBN" required>
+            <button type="button" onclick="redirectToMachDeal()">Search</button>
+        </form>
+    </section>
+
+    <script>
+        function redirectToMachDeal() {
+            window.location.href = "Showdonedeals";
+        }
+    </script>
+</body>
+
+</html>

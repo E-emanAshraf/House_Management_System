@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .person {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available</h1>
+
+    <div id="personContainer"></div>
+
+    <script>
+        // Fetch house data from the backend
+        fetch('/Model')
+            .then(response => response.json())
+            .then(data => {
+                // Data is an array of houses
+                data.forEach(personData => {
+                    createPersonElement(personData);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching person data:', error);
+            });
+
+        // Function to create and append a house element
+        function createPersonElement(personData) {
+            const personDiv = document.createElement('div');
+            personDiv.className = 'person';
+
+            const personInfo = document.createElement('div');
+            personInfo.innerHTML = `
+            <p><strong>ID:</strong> ${personData.ID}</p>
+                <p><strong>Role Type:</strong> ${personData.type}</p>
+                <p><strong>First Name:</strong> ${personData.firstName}</p>
+                <p><strong>Last Name:</strong> ${personData.lastName}</p>
+                <p><strong>Address:</strong> ${personData.address}</p>
+                <p><strong>CellPhone:</strong> ${personData.cellphone}</p>
+                <p><strong>Email:</strong> ${personData.email}</p>
+            `;
+
+            personDiv.appendChild(personInfo);
+
+            document.getElementById('personContainer').appendChild(personDiv);
+        }
+    </script>
+</body>
+</html>

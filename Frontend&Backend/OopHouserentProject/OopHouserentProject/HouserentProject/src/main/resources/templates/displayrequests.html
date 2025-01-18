@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requests </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .Customer {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Requests</h1>
+
+    <div id="usersContainer"></div>
+
+    <script>
+        // Fetch house data from the backend
+        fetch('/displayrequests')
+            .then(response => response.json())
+            .then(data => {
+                // Data is an array of houses
+                data.forEach(userData => {
+                    createCustomerElement(userData);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching User data:', error);
+            });
+
+        // Function to create and append a house element
+        function createUserElement(userrData) {
+            const userDiv = document.createElement('div');
+            userDiv.className = 'user';
+         
+            const userInfo = document.createElement('div');
+            userInfo.innerHTML = `
+                <p><strong>HouseID:</strong> ${userData.HouseID}</p>
+                <p><strong>RequestID:</strong> ${userData.RequestID}</p>
+                <p><strong>ISBN:</strong> ${userData.ISBN}</p>
+                <p><strong>RequestType:</strong> ${userData.RequestType}</p>
+                <p><strong>date:</strong> ${userData.date}</p>
+            `;
+
+           userDiv.appendChild(userInfo);
+
+            document.getElementById('usersContainer').appendChild(userDiv);
+        }
+    </script>
+</body>
+</html>

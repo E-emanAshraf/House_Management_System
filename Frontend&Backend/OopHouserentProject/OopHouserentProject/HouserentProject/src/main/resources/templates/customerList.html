@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer List</title>
+</head>
+<body>
+
+  <h2>ClientList</h2>
+
+  <div id="customerListDiv"></div>
+
+  <script>
+    let customerList = JSON.parse(localStorage.getItem('customerList')) || [];
+    
+    // Display the customer list
+    document.getElementById('customerListDiv').innerHTML = "<h3>Customer List</h3><ul>" + customerList.map(customer => `<li>${customer}</li>`).join('') + "</ul>";
+  </script>
+
+</body>
+</html>

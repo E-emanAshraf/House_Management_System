@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Broker List</title>
+</head>
+<body>
+
+  <h2>Broker List</h2>
+
+  <div id="brokerListDiv"></div>
+
+  <script>
+    let brokerList = JSON.parse(localStorage.getItem('brokerList')) || [];
+    
+    // Display the broker list
+    document.getElementById('brokerListDiv').innerHTML = "<h3>Broker List</h3><ul>" + brokerList.map(broker => `<li>${broker}</li>`).join('') + "</ul>";
+  </script>
+
+</body>
+</html>

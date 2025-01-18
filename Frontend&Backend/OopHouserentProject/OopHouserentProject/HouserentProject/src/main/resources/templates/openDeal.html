@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rental Deals</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('bc2.png') center/cover no-repeat fixed;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #1c0a4d;
+            color: #fff;
+            text-align: center;
+            padding: 3em;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #101c8d;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0f0441;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="margin: 0;">Open Deals</h1>
+    </header>
+
+    <section>
+        <form action="/opendeal" method="post">
+
+
+            <label for="dealID">Deal ID:</label>
+            <input type="number" id="dealID" name="dealID" min="1" max="10" required>
+
+            <label for="dealDate">Deal Date:</label>
+            <input type="date" id="dealDate" name="dealDate" required>
+
+            <label for="customerLSBN">Customer LSBN:</label>
+            <input type="text" id="customerLSBN" name="customerLSBN" required>
+
+            <label for="brokerLSBN">Broker LSBN:</label>
+            <input type="text" id="brokerLSBN" name="brokerLSBN" required>
+
+            <label for="Deposit">Deposit:</label>
+            <input type="number" id="Deposit" name="Deposit" required>
+
+            <label for="Type"> Type:</label>
+            <select id="Type" name="Type">
+                <option value="Rent">Rent</option>
+                <option value="Buy">Buy</option>
+            </select>
+
+            <label for="Status">Statues:</label>
+            <input type="text" id="Status" name="Status" required>
+
+            <label for="brokerID">BrokerID:</label>
+            <input type="number" id="brokerID" name="brokerID" required>
+           
+            <button type="submit">Open Deal</button>
+        </form>
+    </section>
+
+</body>
+</html>

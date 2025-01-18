@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Done Deals</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .deal {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Done Deals</h1>
+
+    <div id="dealsContainer"></div>
+
+    <script>
+        // Fetch house data from the backend
+        fetch('/Showdonedeals')
+            .then(response => response.json())
+            .then(data => {
+                // Data is an array of houses
+                data.forEach(dealData => {
+                    createDealElement(dealData);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching deal data:', error);
+            });
+
+        // Function to create and append a house element
+        function createDealElement(dealData) {
+            const dealDiv = document.createElement('div');
+            dealDiv.className = 'deal';
+
+            const dealImage = document.createElement('img');
+            dealImage.src = dealData.picture; // Assuming 'picture' is a property in your House class
+            dealDiv.appendChild(dealImage);
+            const dealInfo = document.createElement('div');
+            dealInfo.innerHTML = `
+                <p><strong>ID:</strong> ${dealData.ID}</p>
+                <p><strong>Deal Date:</strong> ${dealData.DealDate}</p>
+                <p><strong>CustomerLSBN:</strong> ${dealData.customerLSBN}</p>
+                <p><strong>BrokerLSBN:</strong> ${dealData.brokerLSBN}</p>
+                <p><strong>Deposit:</strong> ${dealData.deposit}</p>
+                <p><strong>Type:</strong> ${dealData.type}</p>
+                <p><strong>Statues:</strong> ${dealData.status}</p>
+            `;
+
+            dealDiv.appendChild(dealInfo);
+
+            document.getElementById('dealsContainer').appendChild(dealDiv);
+        }
+    </script>
+</body>
+</html>

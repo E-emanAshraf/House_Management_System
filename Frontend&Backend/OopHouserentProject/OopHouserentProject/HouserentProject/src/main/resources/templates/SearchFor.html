@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Role</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #df9090;
+            padding: 15px;
+            color: #0f0f0f;
+            font-size: 24px;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        footer {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #ca6262;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #111112;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Search for Role</h1>
+    </header>
+
+    <!-- Form to input search parameters -->
+    <section>
+        <form id="searchForm">
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" required>
+            <br>
+            <button type="button" onclick="searchForRole()">Search</button>
+        </form>
+    </section>
+
+    <!-- Display search results -->
+    <section>
+        <div id="searchResults"></div>
+    </section>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <script>
+        async function searchForRole() {
+            const type = document.getElementById('type').value;
+
+            try {
+                const response = await fetch('/SearchFor', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ type })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    displaySearchResults(result);
+                } else {
+                    console.error('Error searching for role');
+                }
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+        }
+
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '<h2>Search Results:</h2>';
+
+            results.forEach(person => {
+                resultsContainer.innerHTML += `
+                    <p>ID: ${person.ID}, Name: ${person.firstName} ${person.lastName}, Type: ${person.type}</p>
+                `;
+            });
+        }
+    </script>
+
+</body>
+</html>

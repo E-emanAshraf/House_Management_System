@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Houses For Buy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .house {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Houses For Buy</h1>
+
+    <div id="housesContainer"></div>
+
+    <script>
+        // Fetch house data from the backend
+        fetch('/HouseBuy')
+            .then(response => response.json())
+            .then(data => {
+                // Data is an array of houses
+                data.forEach(houseData => {
+                    createHouseElement(houseData);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching house data:', error);
+            });
+
+        // Function to create and append a house element
+        function createHouseElement(houseData) {
+            const houseDiv = document.createElement('div');
+            houseDiv.className = 'house';
+
+            const houseImage = document.createElement('img');
+            houseImage.src = houseData.picture; // Assuming 'picture' is a property in your House class
+            houseDiv.appendChild(houseImage);
+
+            const houseInfo = document.createElement('div');
+            houseInfo.innerHTML = `
+                <p><strong>Location:</strong> ${houseData.location}</p>
+                <p><strong>House Type:</strong> ${houseData.houseType}</p>
+                <p><strong>Area:</strong> ${houseData.area}</p>
+                <p><strong>Deposit Value:</strong> ${houseData.depositValue}</p>
+                <p><strong>Available For:</strong> ${houseData.availableFor}</p>
+                <p><strong>Total Price:</strong> ${houseData.totalPrice}</p>
+                <p><strong>Price Negotiable:</strong> ${houseData.priceNegotiable ? 'Yes' : 'No'}</p>
+            `;
+
+            houseDiv.appendChild(houseInfo);
+
+            document.getElementById('housesContainer').appendChild(houseDiv);
+        }
+    </script>
+</body>
+</html>

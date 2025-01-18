@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #302d2d; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            transition: background-color 0.3s ease;
+        }
+
+        form {
+            background-color: #b48282; /* Dark gray form background */
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #353131; /* User pink color */
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #413a3a; /* Light gray text color */
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #bcacac; /* Medium gray border */
+            border-radius: 5px;
+            font-size: 16px;
+            color: #555; /* Dark gray text color */
+        }
+
+        select {
+            margin-bottom: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #85605d; /* User pink color */
+            color: #e1dbdb;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1e1b1b; /* Slightly darker pink color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/Register" method="POST" enctype="application/x-www-form-urlencoded">
+        <h2>Register</h2>
+        <label for="ID">ID:</label>
+        <input type="tel" name="ID" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <label for="type">Type:</label>
+        <select name="type" required>
+            <option value="Customer">Customer</option>
+            <option value="Admin">Admin</option>
+            <option value="Broker">Broker</option>
+        </select>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" required>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" required>
+
+        <label for="cellphone">Cellphone:</label>
+        <input type="tel" name="cellphone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>
