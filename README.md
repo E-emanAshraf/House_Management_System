@@ -1,11 +1,11 @@
-🏠 House Management System
+#🏠 House Management System
 
-📌 Overview
+##📌 Overview
 _________________________________________________________________________________________________________________________________________________________
 
 The House Management System is a Java-based application built using the Spring Framework. It is designed to facilitate the management of house listings, brokers, and customers. The system provides a structured way to manage real estate transactions efficiently.
 
-✨ Features
+##✨ Features
 _________________________________________________________________________________________________________________________________________________________
 
 👨‍💼 Broker Management: Brokers can register, update their details, and manage available house listings.
@@ -18,10 +18,10 @@ ________________________________________________________________________________
 
 🚀 Spring Boot Integration: Efficient and scalable backend architecture.
 
-🏗️ System Components
+##🏗️ System Components
 ________________________________________________________________________________________________________________________________________________________
 
-1. 👨‍💼 Broker
+###1. 👨‍💼 Broker
 
 Represents a real estate agent who manages house listings.
 
@@ -29,19 +29,19 @@ Can add, edit, and remove houses.
 
 Connects with customers interested in properties.
 
-2. 👨‍👩‍👧‍👦 Customer
+###2. 👨‍👩‍👧‍👦 Customer
 
 A user looking for houses to rent or purchase.
 
 Can browse house listings and contact brokers.
 
-3. 🏡 House
+###3. 🏡 House
 
 Represents a property listed by a broker.
 
 Includes details like price, location, and availability.
 
-4. 📜 Deal
+###4. 📜 Deal
 
 Represents an agreement between a broker and a customer.
 
@@ -49,9 +49,26 @@ Stores details about the finalized transaction, including house price and contra
 
 Ensures a structured and recorded transaction history.
 
-🛠️ Technologies Used
+##🛠️ Technologies Used
 ______________________________________________________________________________________________________________________________________________________
 
 ☕ Java (Spring Boot)
 🛢️ Files
 🎨 HTML
+
+##👥 Team Members
+______________________________________________________________________________________________________________________________________________________
+
+* Eman Ashraf
+
+* Raheeq Mohamed
+
+* Habiba Yousry
+
+* Sama Khaled
+
+* Salma Emad
+
+* Nada Tarek
+
+* Shrouk Aboalela
