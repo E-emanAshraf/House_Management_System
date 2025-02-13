@@ -1,10 +1,12 @@
 🏠 House Management System
 
 📌 Overview
+_________________________________________________________________________________________________________________________________________________________
 
 The House Management System is a Java-based application built using the Spring Framework. It is designed to facilitate the management of house listings, brokers, and customers. The system provides a structured way to manage real estate transactions efficiently.
 
 ✨ Features
+_________________________________________________________________________________________________________________________________________________________
 
 👨‍💼 Broker Management: Brokers can register, update their details, and manage available house listings.
 
@@ -17,6 +19,7 @@ The House Management System is a Java-based application built using the Spring F
 🚀 Spring Boot Integration: Efficient and scalable backend architecture.
 
 🏗️ System Components
+________________________________________________________________________________________________________________________________________________________
 
 1. 👨‍💼 Broker
 
@@ -37,3 +40,18 @@ Can browse house listings and contact brokers.
 Represents a property listed by a broker.
 
 Includes details like price, location, and availability.
+
+4. 📜 Deal
+
+Represents an agreement between a broker and a customer.
+
+Stores details about the finalized transaction, including house price and contract date.
+
+Ensures a structured and recorded transaction history.
+
+🛠️ Technologies Used
+______________________________________________________________________________________________________________________________________________________
+
+☕ Java (Spring Boot)
+🛢️ Files
+🎨 HTML
