@@ -1,12 +1,10 @@
 # 🏠 House Management System
 
-##📌 Overview
-_________________________________________________________________________________________________________________________________________________________
+## 📌 Overview
 
 The House Management System is a Java-based application built using the Spring Framework. It is designed to facilitate the management of house listings, brokers, and customers. The system provides a structured way to manage real estate transactions efficiently.
 
-##✨ Features
-_________________________________________________________________________________________________________________________________________________________
+## ✨ Features
 
 👨‍💼 Broker Management: Brokers can register, update their details, and manage available house listings.
 
@@ -18,10 +16,9 @@ ________________________________________________________________________________
 
 🚀 Spring Boot Integration: Efficient and scalable backend architecture.
 
-##🏗️ System Components
-________________________________________________________________________________________________________________________________________________________
+## 🏗️ System Components
 
-###1. 👨‍💼 Broker
+### 1. 👨‍💼 Broker
 
 Represents a real estate agent who manages house listings.
 
@@ -29,19 +26,19 @@ Can add, edit, and remove houses.
 
 Connects with customers interested in properties.
 
-###2. 👨‍👩‍👧‍👦 Customer
+### 2. 👨‍👩‍👧‍👦 Customer
 
 A user looking for houses to rent or purchase.
 
 Can browse house listings and contact brokers.
 
-###3. 🏡 House
+### 3. 🏡 House
 
 Represents a property listed by a broker.
 
 Includes details like price, location, and availability.
 
-###4. 📜 Deal
+### 4. 📜 Deal
 
 Represents an agreement between a broker and a customer.
 
@@ -49,15 +46,13 @@ Stores details about the finalized transaction, including house price and contra
 
 Ensures a structured and recorded transaction history.
 
-##🛠️ Technologies Used
-______________________________________________________________________________________________________________________________________________________
+## 🛠️ Technologies Used
 
 ☕ Java (Spring Boot)
 🛢️ Files
 🎨 HTML
 
-##👥 Team Members
-______________________________________________________________________________________________________________________________________________________
+## 👥 Team Members
 
 * Eman Ashraf
 
